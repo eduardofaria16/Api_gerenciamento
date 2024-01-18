@@ -8,22 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['nome', 'valor', 'estoque', 'id_marca','estoque', 'id_cidade'];
+
+    protected $fillable = ['nome', 'valor', 'estoque', 'id_marca','estoque', ];
+
 
     protected $with =[
         'marca',
-        'cidade',
+
     ];
 
 
        public function marca()
     {
-        return $this->belongsTo(Marca::class, 'id_marca');
-    }
-    public function cidade()
-    {
-        return $this->belongsTo(Cidade::class, 'id_cidade');
+        return $this->belongsTo(Marca::class, 'id_marca')->first();
     }
 
 }

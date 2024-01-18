@@ -16,6 +16,6 @@ class Cidade extends Model
 
     public function produto()
     {
-        return $this->hasMany(Produto::class, 'id_cidade');
+        return $this->belongsTo(Produto::class, 'id_cidade');
     }
 }

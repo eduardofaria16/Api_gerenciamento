@@ -21,6 +21,8 @@ return new class extends Migration
             $table->float('estoque');
             $table->unsignedBigInteger('id_cidade');
             $table->foreign('id_cidade')->references('id')->on('cidades');
+            $table->timestamps();
+
         });
     }
 

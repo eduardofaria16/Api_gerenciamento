@@ -12,6 +12,11 @@ class ProdutoController extends Controller
     public function index(){
         return Produto::all();
     }
+    public function show( Request $req){
+
+        return  Produto::findOrFail($req->id);
+
+    }
     public function store(Request $req) {
 
 

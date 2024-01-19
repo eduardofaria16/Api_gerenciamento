@@ -12,8 +12,6 @@ class ProdutoController extends Controller
     public function index(){
         return Produto::all();
     }
-
-
     public function store(Request $req) {
 
 
@@ -27,7 +25,6 @@ class ProdutoController extends Controller
     }
     public function update(Request $req)
     {
-      dd($req->all());
         $produto = Produto::find($req->id);
 
         $produto->nome = $req->nome;
@@ -39,6 +36,9 @@ class ProdutoController extends Controller
 
         return response("editado");
     }
-
-}
+            public function delete(Request $req)
+            {
+                $produto = Produto::find($req->id); $produto->delete();
+                 return response ("Produto apagado");
+} }
 

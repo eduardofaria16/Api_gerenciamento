@@ -16,8 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->float('valor');
-            $table->unsignedBigInteger('id_marca');
-            $table->foreign('id_marca')->references('id')->on('marcas');
+            $table->unsignedBigInteger('marca_id');
+            $table->foreign('marca_id')->references('id')->on('marcas');
             $table->float('estoque');
             $table->timestamps();
 

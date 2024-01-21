@@ -156,6 +156,12 @@ return [
     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
+
+        
+            // ...
+            Collective\Html\HtmlServiceProvider::class,
+        
+        
         /*
          * Package Service Providers...
          */
@@ -182,6 +188,12 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'aliases' => [
+            // ...
+            'Form' => Collective\Html\FormFacade::class,
+            'Html' => Collective\Html\HtmlFacade::class,
+        ],
+        
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

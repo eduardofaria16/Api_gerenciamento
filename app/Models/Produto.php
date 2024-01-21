@@ -20,7 +20,7 @@ class Produto extends Model
 
        public function marca()
     {
-        return $this->belongsTo(Marca::class, 'id_marca');
+        return $this->belongsTo(Marca::class);
     }
 
 

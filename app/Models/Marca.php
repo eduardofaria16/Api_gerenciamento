@@ -12,12 +12,15 @@ class Marca extends Model
 
     protected $fillable = ['nome','fabricante'];
 
-
     protected $with =[
         'produto',
-        ];
-    public function produto()
+
+    ];
+
+
+       public function produto()
     {
-        return $this->belongsTo(Produto::class, 'id_marca');
+        return $this->belongsTo(Produto::class);
     }
+
 }

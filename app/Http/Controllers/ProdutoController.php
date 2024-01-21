@@ -10,13 +10,24 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
     public function index(){
-        return Produto::all();
+        
+
+        return view('produtos', ['produtos' => Produto::all()]);
+
+    }
+
+    public function edit( Produto $id ){
+
+      return view('produtos_edit', ['produto' => $id ]);
+    
     }
     public function show( Request $req){
 
         return  Produto::findOrFail($req->id);
 
+ 
     }
+    
     public function store(Request $req) {
 
 
@@ -30,16 +41,19 @@ class ProdutoController extends Controller
     }
     public function update(Request $req)
     {
-        $produto = Produto::find($req->id);
+           
+         $produto = Produto::find($req->id);
 
         $produto->nome = $req->nome;
         $produto->valor = $req->valor;
         $produto->estoque = $req->estoque;
-        $produto->id_marca = $req->id_marca;
-
-        $produto->save();
-
-        return response("editado");
+            $produto->save();
+            
+            if ($produto){
+                return redirect()->route('produtos')->with('success','Atualizado');
+            }
+            return redirect()->route('produtos')->with('error','Erro');
+            
     }
             public function delete(Request $req)
             {

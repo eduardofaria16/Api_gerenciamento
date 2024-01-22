@@ -28,6 +28,11 @@ class ProdutoController extends Controller
  
     }
     
+    
+    public function create(){
+
+        return view('produtos_create');
+    }
     public function store(Request $req) {
 
 
@@ -35,10 +40,11 @@ class ProdutoController extends Controller
            'nome'=>$req->nome,
            'valor'=>$req->valor,
            'estoque'=>$req->estoque,
-           'id_marca'=>$req->id_marca,
+           'marca_id'=>$req->marca_id,
 
             ]);
     }
+
     public function update(Request $req)
     {
            

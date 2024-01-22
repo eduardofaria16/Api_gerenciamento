@@ -1,6 +1,9 @@
 @extends('master')
 
 @section('content')
+<a href="{{ route('produtos.create') }}">Cadastrar Novo Produto</a>
+<hr>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -14,6 +17,8 @@
                             <th class="text-center">Valor</th>
                             <th class="text-center">Estoque</th>
                             <th class="text-center">Marca</th>
+                            <th class="text-center">Ações</th>
+
                             </thead>
                             <tbody>
                             @foreach($produtos as $produto)
@@ -33,7 +38,7 @@
                                         <td>
                                             {{ $produto->marca->nome }}
                                         </td>
-                                        <td class="text-center">Ações 
+                                        <td class="text-center">
                                             <a href="{{ route('produtos_edit', $produto->id) }}">Editar</a>
                                             <a href="{{ route('produtos', $produto->id) }}">Deletar</a>
 

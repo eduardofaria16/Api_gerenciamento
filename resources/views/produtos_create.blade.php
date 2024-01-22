@@ -12,12 +12,15 @@
 <input type="text" name=" nome" placeholder="nome">
 <input type="int" name="valor" placeholder="Valor">
 <input type="int" name="estoque"placeholder="Qtd em estoque">
-<select name="marca" id="marca_id">
-        <option value="1">Cesta</option>
-        <option value="2">Cocal </option>
-        <option value="3">ABC3 </option>
-        
-    </select>
+    <label for="marca" class="col-md-4 col-form-label text-md-end">{{ __('Selecione a marca') }}</label>
+    <div class="col-md-6">
+        <select id="marca" name="marca"  class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option value="1" selected> vasconcelos </option>
+            <option value="2">ABC</option>
+            <option value="3">balduco</option>
+        </select>
+    </div>
+
 
 
 <button type="submit">Cadastrar</button>

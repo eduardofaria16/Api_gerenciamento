@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
   ->name('produtos.store');
 }
 {
-  Route::post('/produtos/{id}',[ProdutoController::class, "show"])
-  ->name('produtos.show');
+  Route::get('/produtos/{id}',[ProdutoController::class, "show"])
+  ->name('produtos_show');
 }
 {
    Route::get('produtos/{id}/edit',[ProdutoController::class, "edit"])
@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
  }
  {
   Route::delete('/produtos/{id}',[ProdutoController::class, "destroy"])
-  ->name('produtos.destroy');
+  ->name('produtos_destroy');
 }
 
- 

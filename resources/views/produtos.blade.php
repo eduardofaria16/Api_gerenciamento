@@ -23,7 +23,7 @@
                             <tbody>
                             @foreach($produtos as $produto)
                                 <tr>
-                                   
+
                                         <td>
                                             {{ $produto->nome }}
                                         </td>
@@ -40,11 +40,11 @@
                                         </td>
                                         <td class="text-center">
                                             <a href="{{ route('produtos_edit', $produto->id) }}">Editar</a>
-                                            <a href="{{ route('produtos', $produto->id) }}">Deletar</a>
+                                            <a href="{{ route('produtos_show', $produto->id) }}">Show</a>
 
                                         </td>
-                                        
-                                   
+
+
                                 </tr>
                             @endforeach
                             </tbody>

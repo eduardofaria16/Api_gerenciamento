@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
     public function index(){
-        
+
 
         return view('produtos', ['produtos' => Produto::all()]);
 
@@ -19,51 +19,56 @@ class ProdutoController extends Controller
     public function edit( Produto $id ){
 
       return view('produtos_edit', ['produto' => $id ]);
-    
-    }
-    public function show( Request $req){
 
-        return  Produto::findOrFail($req->id);
-
- 
     }
-    
-    
+    public function show( Produto $id){
+
+        return  view('produtos_show',['produto' =>$id]);
+
+
+    }
+
+
     public function create(){
 
         return view('produtos_create');
+
     }
     public function store(Request $req) {
 
 
+//dd($req->marca);
         Produto::create ([
            'nome'=>$req->nome,
            'valor'=>$req->valor,
            'estoque'=>$req->estoque,
-           'marca_id'=>$req->marca_id,
+           'marca_id'=>$req->marca,
 
             ]);
+        return redirect()->route('produtos');
+
     }
 
     public function update(Request $req)
     {
-           
+
          $produto = Produto::find($req->id);
 
         $produto->nome = $req->nome;
         $produto->valor = $req->valor;
         $produto->estoque = $req->estoque;
             $produto->save();
-            
+
             if ($produto){
                 return redirect()->route('produtos')->with('success','Atualizado');
             }
             return redirect()->route('produtos')->with('error','Erro');
-            
+
     }
-            public function delete(Request $req)
+            public function destroy( $id)
             {
-                $produto = Produto::find($req->id); $produto->delete();
-                 return response ("Produto apagado");
+//
+                 Produto::destroy($id);
+                 return redirect()->route('produtos');
 } }
 

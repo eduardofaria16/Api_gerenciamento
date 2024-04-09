@@ -42,9 +42,24 @@ php artisan migrate
 
 php artisan serve
 
+```
+## Uso
 
+Você pode utilizar ferramentas como Postman ou Insomnia para enviar requisições HTTP para a API.
 
+## Rotas
 
+- GET /api/produtos: Retorna todos os produtos.
+- GET /api/produtos/{id}: Retorna um único produto com o ID especificado.
+- POST /api/produtos: Cria um novo produto.
+- PUT /api/produtos/{id}: Atualiza um produto existente com o ID especificado.
+- DELETE /api/produtos/{id}: Exclui um produto com o ID especificado.
+  
+Certifique-se de enviar as requisições com os cabeçalhos adequados e os dados corretos no corpo da solicitação, conforme necessário.
+
+ ## Contribuindo
+ 
+Se deseja contribuir com melhorias, correções de bugs ou novos recursos, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 
 

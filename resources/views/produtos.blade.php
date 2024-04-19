@@ -2,6 +2,7 @@
 
 @section('content')
 <a href="{{ route('produtos.create') }}">Cadastrar Novo Produto</a>
+<a href="{{ route('marcas.create') }}"> Cadastrar Nova Marca</a>
 <hr>
 
     <div class="container">

@@ -10,17 +10,27 @@ class Marca extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome','fabricante'];
+
+    protected $fillable = ['nome'];
 
     protected $with =[
         'produto',
 
     ];
-
+    public function create()
+    {
+        $marcas = Marca::all();
+        return view('cadastro_produto', compact('marcas'));
+    }
+    
 
        public function produto()
     {
         return $this->belongsTo(Produto::class);
     }
 
+    public $timestamps = false;
+   
+
+    
 }

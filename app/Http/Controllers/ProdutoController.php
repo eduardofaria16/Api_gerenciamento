@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Marca;
 use App\Models\Produto;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+
+
     public function index(){
 
 
@@ -30,10 +32,15 @@ class ProdutoController extends Controller
 
 
     public function create(){
-
+        $marcas = Marca::all();
+        return view('produtos_create', compact('marcas'));
+    
         return view('produtos_create');
 
-    }
+
+        $marcas = Produto::all();
+        return view('produtos_create', compact('marcas'));}
+
     public function store(Request $req) {
 
 
@@ -70,5 +77,5 @@ class ProdutoController extends Controller
 //
                  Produto::destroy($id);
                  return redirect()->route('produtos');
-} }
-
+} 
+}

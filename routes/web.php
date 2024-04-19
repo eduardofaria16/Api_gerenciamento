@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\MarcaController;
 use Illuminate\Support\Facades\Route;
 
 {
@@ -32,3 +33,31 @@ use Illuminate\Support\Facades\Route;
   ->name('produtos_destroy');
 }
 
+{
+  Route::get('/marcas', [MarcaController::class, "index"])
+  ->name('marcas');
+}
+{
+  Route::get('/marcas/create',[MarcaController::class, "create"])
+  ->name('marcas.create');
+}
+{
+  Route::post('/marcas',[MarcaController::class, "store"])
+  ->name('marcas.store');
+}
+{
+  Route::get('/marcas/{id}',[MarcaController::class, "show"])
+  ->name('marcas_show');
+}
+{
+   Route::get('marcas/{id}/edit',[MarcaController::class, "edit"])
+   ->name('marcas_edit');
+ }
+{
+  Route::put('marcas/{id}',[MarcaController::class, "update"])
+  ->name('marcas.update');
+ }
+ {
+  Route::delete('/marcas/{id}',[MarcaController::class, "destroy"])
+  ->name('marcas_destroy');
+}

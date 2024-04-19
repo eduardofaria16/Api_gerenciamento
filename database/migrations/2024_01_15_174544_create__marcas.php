@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('fabricante');
-
-        });
+           });
     }
 
     /**

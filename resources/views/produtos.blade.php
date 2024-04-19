@@ -40,7 +40,7 @@
                                         </td>
                                         <td class="text-center">
                                             <a href="{{ route('produtos_edit', $produto->id) }}">Editar</a>
-                                            <a href="{{ route('produtos_show', $produto->id) }}">Show</a>
+                                            <a href="{{ route('produtos_show', $produto->id) }}">Excluir</a>
 
                                         </td>
 
